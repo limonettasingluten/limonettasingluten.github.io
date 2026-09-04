@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Capacitaciones virtuales y consultoría gastronómica especializada en cocina sin gluten." />
+    <meta name="theme-color" content="#03a1b9" />
+    <title>Limonetta Sin Gluten | Capacitaciones y consultoría</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+    <header class="site-header" id="inicio">
+      <div class="nav-wrap">
+        <a class="brand" href="#inicio" aria-label="Limonetta Servicios Gastronómicos Sin Gluten, inicio">
+          <img class="brand-logo" src="./assets/logo-limonetta.webp" alt="Limonetta Servicios Gastronómicos Sin Gluten, marca registrada" />
+        </a>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+          <a href="#nosotras">Quiénes somos</a>
+          <a href="#capacitaciones">Capacitaciones</a>
+          <a href="#consultoria">Consultoría</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="./assets/hero-limonetta.png" alt="Selección de panes, cookies, donas y torta de pastelería" />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow light">9 años de Limonetta · 2017–2026</p>
+          <h1 id="hero-title">Aprendé a crear productos sin gluten que realmente dan ganas de comer.</h1>
+          <p>Formación gastronómica clara, práctica y acompañada para aprender, perfeccionarte o impulsar tu emprendimiento.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#capacitaciones">Elegí tus cursos</a>
+            <a class="button button-ghost" href="#consultoria">Conocé la consultoría</a>
+          </div>
+        </div>
+        <div class="hero-proof" aria-label="Características de Limonetta">
+          <span><strong>9 años de Limonetta</strong> formando en cocina sin gluten</span>
+          <span><strong>+15 años de experiencia</strong> profesional gastronómica</span>
+          <span><strong>Marca registrada ®</strong> identidad y trayectoria</span>
+        </div>
+      </section>
+
+      <section class="section story" id="nosotras" aria-labelledby="story-title">
+        <div class="section-heading">
+          <p class="eyebrow">Quiénes somos</p>
+          <h2 id="story-title">Una escuela nacida de la experiencia y la pasión por enseñar</h2>
+        </div>
+        <div class="story-grid">
+          <div class="story-copy">
+            <p class="lead">Somos <strong>Lorena Quesada y Guadalupe Cuello</strong>, profesionales gastronómicas con más de 15 años de experiencia.</p>
+            <p><strong>Limonetta es una marca registrada</strong> que en 2026 celebra nueve años formando y acompañando a personas y proyectos dentro de la gastronomía sin gluten.</p>
+            <p>En Limonetta unimos técnica, práctica y acompañamiento para que cada persona comprenda los ingredientes, gane seguridad y pueda crear sus propias preparaciones.</p>
+            <p>Nuestras propuestas están pensadas tanto para quienes cocinan en casa como para quienes desean emprender, profesionalizar su producción o desarrollar nuevos productos.</p>
+          </div>
+          <div class="principles" aria-label="Nuestro enfoque">
+            <article>
+              <span aria-hidden="true">01</span>
+              <h3>Entender</h3>
+              <p>Explicamos la función de cada ingrediente para que no dependas solamente de una receta.</p>
+            </article>
+            <article>
+              <span aria-hidden="true">02</span>
+              <h3>Practicar</h3>
+              <p>Trabajamos técnicas aplicables a panes, pastelería, productos saludables y más.</p>
+            </article>
+            <article>
+              <span aria-hidden="true">03</span>
+              <h3>Crear</h3>
+              <p>Te acompañamos para adaptar, corregir y desarrollar productos con identidad propia.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section courses" id="capacitaciones" aria-labelledby="courses-title">
+        <div class="section-heading course-heading">
+          <div>
+            <p class="eyebrow">Capacitaciones virtuales</p>
+            <h2 id="courses-title">Elegí una, varias o todas las propuestas</h2>
+          </div>
+          <p>Marcá los cursos que te interesan. Al final vas a tener tu selección lista para consultar.</p>
+        </div>
+
+        <div class="course-toolbar" aria-label="Filtrar capacitaciones">
+          <button class="filter active" type="button" data-filter="todos">Todos</button>
+          <button class="filter" type="button" data-filter="carreras">Carreras</button>
+          <button class="filter" type="button" data-filter="talleres">Talleres</button>
+          <button class="filter" type="button" data-filter="saludable">Saludable</button>
+          <button class="filter" type="button" data-filter="personalizados">Personalizados</button>
+        </div>
+
+        <div class="course-grid" id="course-grid" aria-live="polite"></div>
+
+        <aside class="selection-panel" id="selection-panel" aria-labelledby="selection-title">
+          <div>
+            <p class="selection-label">Tu selección</p>
+            <h3 id="selection-title"><span id="selection-count">0</span> capacitaciones elegidas</h3>
+            <p id="selection-help">Podés marcar todos los cursos que quieras.</p>
+          </div>
+          <div class="selection-list" id="selection-list" aria-live="polite"></div>
+          <button class="button button-dark" id="prepare-query" type="button" disabled>Preparar mi consulta</button>
+        </aside>
+      </section>
+
+      <section class="section consulting" id="consultoria" aria-labelledby="consulting-title">
+        <div class="consulting-intro">
+          <p class="eyebrow light">Consultoría gastronómica</p>
+          <h2 id="consulting-title">Tu proyecto sin gluten, acompañado por profesionales</h2>
+          <p>Trabajamos con emprendimientos y empresas que necesitan resolver un producto, ordenar procesos o capacitar a su equipo.</p>
+          <button class="text-link" type="button" data-open-consulting>Quiero contarles mi proyecto <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="service-grid">
+          <article>
+            <span aria-hidden="true">✦</span>
+            <h3>Desarrollo de recetas</h3>
+            <p>Creación, adaptación y mejora de formulaciones sin gluten.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">✦</span>
+            <h3>Corrección de productos</h3>
+            <p>Análisis de resultados para mejorar textura, sabor y conservación.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">✦</span>
+            <h3>Armado de panaderías</h3>
+            <p>Orientación para organizar una propuesta gastronómica especializada.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">✦</span>
+            <h3>Procesos de producción</h3>
+            <p>Revisión del flujo de trabajo para producir con mayor claridad y orden.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">✦</span>
+            <h3>Capacitación de equipos</h3>
+            <p>Formación virtual adaptada a las necesidades de cada proyecto.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">✦</span>
+            <h3>Acompañamiento</h3>
+            <p>Seguimiento personalizado durante cada etapa del desarrollo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section testimonials" id="testimonios" aria-labelledby="testimonials-title">
+        <div class="section-heading testimonials-heading">
+          <div>
+            <p class="eyebrow">Experiencias reales</p>
+            <h2 id="testimonials-title">Lo cuentan quienes aprendieron con Limonetta</h2>
+          </div>
+          <p>Palabras y producciones compartidas por alumnas de la Carrera Inicial de Panadería y Pastelería Sin Gluten 2026.</p>
+        </div>
+
+        <div class="testimonial-quotes">
+          <blockquote class="testimonial-card featured-quote">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <p>Los apuntes súper completos elaborados con profesionalismo y con un lenguaje sencillo y comprensible para la gente común. Abordan muchísimos puntos de un mismo tema. Todo está muy bien pensado.</p>
+            <footer>Alumna · Carrera Inicial 2026</footer>
+          </blockquote>
+          <div class="testimonial-stack">
+            <blockquote class="testimonial-card">
+              <p>Infinitas gracias por tantos aprendizajes, explicaciones clarísimas, múltiples tips y la predisposición y amabilidad para responderme.</p>
+              <footer>Alumna · Carrera Inicial 2026</footer>
+            </blockquote>
+            <blockquote class="testimonial-card yellow-card">
+              <p>Feliz no solo con lo que estoy aprendiendo. Verlos disfrutar de lo que hago y que te vuelvan a pedir que los hagas de nuevo, vamos por un buen camino. Gracias por todo.</p>
+              <footer>Alumna · Carrera Inicial 2026</footer>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="testimonial-gallery-heading">
+          <div>
+            <p class="eyebrow">Resultados compartidos</p>
+            <h3>Sus prácticas, sus avances</h3>
+          </div>
+          <p>Tocá una imagen para verla completa.</p>
+        </div>
+        <div class="testimonial-gallery" aria-label="Galería de testimonios y producciones de alumnas">
+          <button type="button" data-testimonial-image="./assets/testimonio-1.webp" data-testimonial-alt="Testimonios de alumnas con torta y empanadas sin gluten">
+            <img src="./assets/testimonio-1.webp" alt="Testimonios de alumnas con torta y empanadas sin gluten" loading="lazy" />
+          </button>
+          <button type="button" data-testimonial-image="./assets/testimonio-2.webp" data-testimonial-alt="Agradecimiento por la Carrera Inicial con producciones de brownie y panes">
+            <img src="./assets/testimonio-2.webp" alt="Agradecimiento por la Carrera Inicial con producciones de brownie y panes" loading="lazy" />
+          </button>
+          <button type="button" data-testimonial-image="./assets/testimonio-3.webp" data-testimonial-alt="Testimonios con panes de molde y pancitos de queso">
+            <img src="./assets/testimonio-3.webp" alt="Testimonios con panes de molde y pancitos de queso" loading="lazy" />
+          </button>
+          <button type="button" data-testimonial-image="./assets/testimonio-4.webp" data-testimonial-alt="Experiencias de alumnas con brownie y focaccia">
+            <img src="./assets/testimonio-4.webp" alt="Experiencias de alumnas con brownie y focaccia" loading="lazy" />
+          </button>
+          <button type="button" data-testimonial-image="./assets/testimonio-5.webp" data-testimonial-alt="Resultados de bizcochuelo, panes y pancitos sin gluten">
+            <img src="./assets/testimonio-5.webp" alt="Resultados de bizcochuelo, panes y pancitos sin gluten" loading="lazy" />
+          </button>
+          <button type="button" data-testimonial-image="./assets/testimonio-6.webp" data-testimonial-alt="Prácticas de panes y torta realizadas por alumnas">
+            <img src="./assets/testimonio-6.webp" alt="Prácticas de panes y torta realizadas por alumnas" loading="lazy" />
+          </button>
+          <button type="button" data-testimonial-image="./assets/testimonio-7.webp" data-testimonial-alt="Agradecimientos y producciones de panadería y pastelería">
+            <img src="./assets/testimonio-7.webp" alt="Agradecimientos y producciones de panadería y pastelería" loading="lazy" />
+          </button>
+        </div>
+      </section>
+
+      <section class="section contact" id="contacto" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="eyebrow light">Estamos para ayudarte</p>
+          <h2 id="contact-title">Contanos qué querés aprender o desarrollar</h2>
+          <p>Elegí tus capacitaciones, consultanos por una clase personalizada o contanos sobre tu proyecto gastronómico.</p>
+          <a class="button button-primary" href="https://wa.me/5493513988585?text=Hola%2C%20quiero%20recibir%20informaci%C3%B3n%20sobre%20Limonetta%20Sin%20Gluten." target="_blank" rel="noreferrer">
+            Escribinos por WhatsApp
+          </a>
+          <a class="contact-number" href="tel:+5493513988585">+54 9 351 398-8585</a>
+        </div>
+        <div class="social-cards" aria-label="Redes sociales de Limonetta">
+          <a class="social-card instagram" href="https://www.instagram.com/limonettasingluten/" target="_blank" rel="noreferrer">
+            <span class="social-icon" aria-hidden="true">IG</span>
+            <span><strong>Instagram</strong><small>@limonettasingluten · Más de 15 mil seguidores</small></span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="social-card facebook" href="https://www.facebook.com/limonettasingluten/" target="_blank" rel="noreferrer">
+            <span class="social-icon" aria-hidden="true">f</span>
+            <span><strong>Facebook</strong><small>Limonetta Sin Gluten · Más de 11 mil seguidores</small></span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="social-card domain-card">
+            <span class="social-icon" aria-hidden="true">www</span>
+            <span><strong>Sitio oficial</strong><small>limonettasingluten.com.ar</small></span>
+            <span class="domain-status">Próximamente</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <p class="eyebrow light">Limonetta Sin Gluten</p>
+        <h2 id="closing-title">Tu próxima receta puede ser el comienzo de algo grande.</h2>
+        <a class="button button-primary" href="https://wa.me/5493513988585?text=Hola%2C%20quiero%20conocer%20las%20capacitaciones%20de%20Limonetta%20Sin%20Gluten." target="_blank" rel="noreferrer">Quiero recibir información</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#inicio" aria-label="Limonetta, inicio">
+        <img class="brand-logo footer-logo" src="./assets/logo-limonetta.webp" alt="Limonetta Servicios Gastronómicos Sin Gluten" />
+      </a>
+      <p>Capacitaciones virtuales y consultoría gastronómica.</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/limonettasingluten/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/limonettasingluten/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://wa.me/5493513988585" target="_blank" rel="noreferrer">WhatsApp</a>
+      </div>
+    </footer>
+
+    <dialog class="query-dialog" id="query-dialog">
+      <form method="dialog" class="dialog-card">
+        <button class="dialog-close" value="cancel" aria-label="Cerrar">×</button>
+        <p class="eyebrow">Tu consulta</p>
+        <h2 id="dialog-title">Ya elegiste tus capacitaciones</h2>
+        <p id="dialog-intro">Vamos a preparar un mensaje con tu selección.</p>
+        <div class="dialog-summary" id="dialog-summary"></div>
+        <label for="visitor-name">Tu nombre <span>(opcional)</span></label>
+        <input id="visitor-name" name="visitor-name" type="text" autocomplete="name" placeholder="¿Cómo te llamás?" />
+        <div class="dialog-actions">
+          <button class="button button-primary" id="share-whatsapp" type="button">Enviar a Limonetta por WhatsApp</button>
+          <button class="button button-outline" id="copy-query" type="button">Copiar consulta</button>
+        </div>
+        <p class="dialog-note">El mensaje se abrirá listo para enviar al WhatsApp de Limonetta.</p>
+      </form>
+    </dialog>
+
+    <dialog class="testimonial-dialog" id="testimonial-dialog" aria-label="Testimonio ampliado">
+      <button class="dialog-close" type="button" data-close-testimonial aria-label="Cerrar imagen">×</button>
+      <img id="testimonial-dialog-image" src="" alt="" />
+    </dialog>
+
+    <a class="whatsapp-float" href="https://wa.me/5493513988585?text=Hola%2C%20quiero%20recibir%20informaci%C3%B3n%20sobre%20Limonetta%20Sin%20Gluten." target="_blank" rel="noreferrer" aria-label="Consultar a Limonetta por WhatsApp">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.05 3A12.7 12.7 0 0 0 5.2 22.27L3.5 28.5l6.37-1.67A12.7 12.7 0 1 0 16.05 3Zm0 2.14a10.56 10.56 0 0 1 9.11 15.91 10.58 10.58 0 0 1-14.88 3.63l-.46-.28-3.78.99 1.01-3.68-.3-.48a10.55 10.55 0 0 1 9.3-16.09Zm-4.46 5.3c-.23 0-.6.09-.92.44-.31.35-1.2 1.17-1.2 2.85 0 1.68 1.23 3.31 1.4 3.54.17.23 2.41 3.68 5.84 5.16.82.35 1.45.56 1.95.72.82.26 1.57.22 2.16.13.66-.1 2.03-.83 2.32-1.63.29-.8.29-1.48.2-1.63-.08-.15-.31-.23-.66-.41-.34-.17-2.03-1-2.35-1.11-.31-.12-.54-.17-.77.17-.23.35-.89 1.12-1.09 1.35-.2.23-.4.26-.74.09-.35-.17-1.46-.54-2.78-1.72a10.42 10.42 0 0 1-1.92-2.39c-.2-.35-.02-.53.15-.7.16-.15.35-.4.52-.6.17-.2.23-.35.35-.58.11-.23.05-.43-.03-.6-.09-.18-.77-1.86-1.06-2.55-.28-.67-.56-.58-.77-.59h-.66Z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">Consulta copiada</div>
+    <script src="./app.js"></script>
+  </body>
+</html>
