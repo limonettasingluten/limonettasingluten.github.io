@@ -4,6 +4,7 @@ const courses = [
     name: "Carrera Básica",
     category: "carreras",
     label: "Carrera",
+    details: "3 meses · Con certificado",
     description: "Bases de panadería y pastelería sin gluten para comprender ingredientes, técnicas y procesos."
   },
   {
@@ -11,6 +12,7 @@ const courses = [
     name: "Carrera Avanzada",
     category: "carreras",
     label: "Carrera",
+    details: "3 meses · Con certificado",
     description: "Formulación, corrección y creación de recetas para profundizar y desarrollar productos propios."
   },
   {
@@ -18,6 +20,7 @@ const courses = [
     name: "Taller de Donas",
     category: "talleres",
     label: "Taller",
+    details: "Curso virtual",
     description: "Masas clásicas y especiales, fermentación, cocción, rellenos, glaseados y conservación."
   },
   {
@@ -25,13 +28,87 @@ const courses = [
     name: "Cookies Americanas",
     category: "talleres",
     label: "Taller",
+    details: "Curso grabado",
     description: "Técnicas para lograr cookies con buena estructura, textura, sabor y terminaciones."
+  },
+  {
+    id: "pizzas",
+    name: "Pizzas Sin Gluten",
+    category: "talleres",
+    label: "Curso",
+    details: "Curso grabado · 2 clases",
+    description: "Masas semilíquidas y amasables, fermentación, cocción, conservación y uso del freezer."
+  },
+  {
+    id: "pastas",
+    name: "Pastas Sin Gluten",
+    category: "talleres",
+    label: "Curso",
+    details: "Curso grabado · 2 clases",
+    description: "Pastas frescas, secas y rellenas, ñoquis, salsas, cocción, conservación y freezer."
+  },
+  {
+    id: "panes-sandwich",
+    name: "Panes de Sándwich",
+    category: "talleres",
+    label: "Curso",
+    details: "Curso grabado · 3 clases",
+    description: "Panes de miga, ciabatta y choripán, con técnicas de amasado, fermentación y conservación."
+  },
+  {
+    id: "factureria",
+    name: "Facturería Sin Gluten",
+    category: "talleres",
+    label: "Curso",
+    details: "Curso grabado",
+    description: "Facturas de grasa, leche, manteca y hojaldre, con cremas, rellenos, almíbares y terminaciones."
+  },
+  {
+    id: "panaderia",
+    name: "Panadería Sin Gluten",
+    category: "talleres",
+    label: "Curso",
+    details: "Curso virtual",
+    description: "Masas, fermentación, horneado y conservación para elaborar diferentes panes sin gluten."
+  },
+  {
+    id: "empanadas-tartas",
+    name: "Empanadas y Tartas",
+    category: "talleres",
+    label: "Curso",
+    details: "Curso grabado · 2 clases",
+    description: "Masas para horno y fritura, repulgues, tartas y alternativas adaptadas para diferentes necesidades."
+  },
+  {
+    id: "panes-semiliquidos",
+    name: "Panes Semilíquidos",
+    category: "talleres",
+    label: "Curso",
+    details: "Curso grabado",
+    description: "Sustitutos, premezclas, freezer y horneado aplicados a pan de lomo, baguette e integral con semillas."
+  },
+  {
+    id: "panes-amasables",
+    name: "Panes Amasables",
+    category: "talleres",
+    label: "Curso",
+    details: "Curso grabado",
+    description: "Pan de campo, pancitos sin goma xántica ni psyllium y figazas, con múltiples sustituciones."
+  },
+  {
+    id: "panes-amasables-2026",
+    name: "Panes Amasables 2026",
+    category: "talleres",
+    label: "Nuevas recetas",
+    details: "Curso grabado · 1 clase de 3 horas",
+    description: "Baguette, hamburguesa, PBT y ciabatta, con costos, conservación y opciones veganas o sin lactosa."
   },
   {
     id: "panaderia-saludable",
     name: "Panadería Saludable",
     category: "saludable",
     label: "Saludable",
+    details: "Curso grabado · 3 clases",
     description: "Preparaciones sin gluten con ingredientes elegidos por su aporte y funcionalidad."
   },
   {
@@ -39,6 +116,7 @@ const courses = [
     name: "Pastelería Saludable",
     category: "saludable",
     label: "Saludable",
+    details: "Curso grabado",
     description: "Alternativas sin azúcares refinados y recursos para crear pastelería rica y equilibrada."
   },
   {
@@ -46,6 +124,7 @@ const courses = [
     name: "Keto y Sin Gluten",
     category: "saludable",
     label: "Especial",
+    details: "Curso grabado",
     description: "Recetas y técnicas para elaborar preparaciones keto, sin gluten y llenas de sabor."
   },
   {
@@ -53,6 +132,7 @@ const courses = [
     name: "Clases Personalizadas",
     category: "personalizados",
     label: "A medida",
+    details: "Clases virtuales",
     description: "Una propuesta individual o grupal creada según lo que necesitás aprender o resolver."
   }
 ];
@@ -80,8 +160,12 @@ function renderCourses() {
     return `
       <article class="course-card${isSelected ? " selected" : ""}" data-course-id="${course.id}">
         <span class="course-number">${number}</span>
-        <span class="course-tag">${course.label}</span>
+        <div class="course-badges">
+          <span class="course-tag">${course.label}</span>
+          <span class="course-format">100% virtual</span>
+        </div>
         <h3>${course.name}</h3>
+        <strong class="course-details">${course.details}</strong>
         <p>${course.description}</p>
         <button class="select-course" type="button" aria-pressed="${isSelected}" data-select-course="${course.id}">
           <span class="select-icon" aria-hidden="true">${isSelected ? "✓" : "+"}</span>
@@ -105,7 +189,7 @@ function getQueryText() {
   const name = document.querySelector("#visitor-name").value.trim();
   const greeting = name ? `Hola, soy ${name}.` : "Hola.";
   const list = chosen.map((course) => `• ${course.name}`).join("\n");
-  return `${greeting} Quiero recibir información sobre estas capacitaciones de Limonetta Sin Gluten:\n\n${list}\n\n¿Me cuentan modalidad, contenido y valor?`;
+  return `${greeting} Quiero recibir información sobre estas capacitaciones 100% virtuales de Limonetta Sin Gluten:\n\n${list}\n\n¿Me cuentan contenido, acceso y valor?`;
 }
 
 function showToast(message) {
