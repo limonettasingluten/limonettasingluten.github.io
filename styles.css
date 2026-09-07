@@ -105,10 +105,10 @@ a { color: inherit; }
 
 .hero {
   position: relative;
-  display: grid;
+  display: block;
   min-height: min(790px, calc(100svh - 78px));
+  padding: 50px 0 26px;
   overflow: hidden;
-  align-items: center;
   background: #ede8de;
 }
 .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -118,7 +118,7 @@ a { color: inherit; }
   position: relative;
   z-index: 2;
   width: min(1180px, calc(100% - 40px));
-  margin: -20px auto 76px;
+  margin: 0 auto;
   color: var(--white);
 }
 .hero-content > * { max-width: 660px; }
@@ -138,9 +138,9 @@ a { color: inherit; }
   letter-spacing: -.045em;
   line-height: 1.04;
 }
-.hero h1 { max-width: 735px; font-size: clamp(3.1rem, 6.1vw, 6.2rem); }
-.hero-content > p:not(.eyebrow) { max-width: 610px; margin: 31px 0 0; color: rgba(255,255,255,.88); font-size: 18px; line-height: 1.68; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 39px; }
+.hero h1 { max-width: 760px; font-size: clamp(3rem, 5.5vw, 5.6rem); }
+.hero-content > p:not(.eyebrow) { max-width: 610px; margin: 24px 0 0; color: rgba(255,255,255,.88); font-size: 18px; line-height: 1.68; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .button {
   display: inline-flex;
   min-height: 50px;
@@ -164,16 +164,13 @@ a { color: inherit; }
 .button-outline { border-color: var(--line); color: var(--ink); background: transparent; }
 .button:disabled { cursor: not-allowed; opacity: .45; transform: none; }
 .hero-proof {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  position: relative;
   z-index: 3;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   width: min(850px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 25px 0 27px;
+  margin: 42px auto 0;
+  padding: 20px 0 4px;
   border-top: 1px solid rgba(255,255,255,.25);
   color: rgba(255,255,255,.74);
   font-size: 13px;
@@ -278,8 +275,8 @@ a { color: inherit; }
 .selection-chip { padding: 6px 10px; border: 1px solid rgba(11,11,11,.18); border-radius: 999px; color: var(--ink); background: rgba(255,255,255,.25); font-size: 12px; }
 .selection-panel .button-dark { color: var(--ink); background: var(--lime); }
 
-.consulting { position: relative; z-index: 0; display: grid; grid-template-columns: .85fr 1.15fr; gap: 100px; color: var(--white); }
-.consulting::before { position: absolute; inset: 0 50%; z-index: -1; width: 100vw; margin-right: -50vw; margin-left: -50vw; background: #0b0b0b; content: ""; }
+.consulting { position: relative; z-index: 0; display: grid; grid-template-columns: .85fr 1.15fr; gap: 100px; color: var(--white); background: #0b0b0b; box-shadow: 0 0 0 100vmax #0b0b0b; clip-path: inset(0 -100vmax); }
+.consulting::before { display: none; }
 .consulting-intro { position: sticky; top: 120px; align-self: start; }
 .consulting h2 { font-size: clamp(2.7rem, 4.8vw, 4.6rem); }
 .consulting-intro > p:not(.eyebrow) { max-width: 480px; margin: 26px 0; color: rgba(255,255,255,.75); }
@@ -354,7 +351,12 @@ a.social-card:hover { transform: translateX(4px); background: rgba(255,255,255,.
 .social-icon { display: grid; width: 52px; height: 52px; border-radius: 16px; place-items: center; color: var(--ink); background: var(--lime); font-size: 16px; font-weight: 900; letter-spacing: -.03em; }
 .facebook .social-icon { color: var(--white); background: #1877f2; font-family: Arial, sans-serif; font-size: 30px; }
 .instagram .social-icon { color: var(--white); background: linear-gradient(145deg, #6944c5, #d62976 52%, #feda75); }
-.tiktok .social-icon { color: var(--white); background: #111; font-size: 28px; text-shadow: 2px 0 #25f4ee, -2px 0 #fe2c55; }
+.tiktok .social-icon { color: var(--white); background: #111; }
+.tiktok-logo { display: block; width: 32px; height: 32px; overflow: visible; }
+.tiktok-logo path { transform-origin: center; }
+.tiktok-cyan { fill: #25f4ee; transform: translate(-1.6px, 1.2px); }
+.tiktok-red { fill: #fe2c55; transform: translate(1.6px, -1.2px); }
+.tiktok-white { fill: #fff; }
 .social-card strong, .social-card small { display: block; }
 .social-card strong { font-size: 18px; }
 .social-card small { margin-top: 3px; color: rgba(255,255,255,.7); font-size: 13px; }
@@ -366,8 +368,8 @@ a.social-card:hover { transform: translateX(4px); background: rgba(255,255,255,.
 .footer-links a { color: var(--green-2); font-weight: 800; text-underline-offset: 4px; }
 
 @media (max-width: 900px) {
-  .hero { min-height: 760px; align-items: start; }
-  .hero-content { margin-top: 0; padding-top: 95px; }
+  .hero { min-height: 760px; padding-top: 58px; }
+  .hero-content { margin-top: 0; padding-top: 0; }
   .hero h1 { font-size: clamp(3.05rem, 10vw, 5rem); }
   .hero-image { object-position: 57% center; }
   .hero-shade { background: linear-gradient(90deg, rgba(4,55,64,.96), rgba(3,126,144,.79) 62%, rgba(3,161,185,.22)); }
@@ -394,8 +396,8 @@ a.social-card:hover { transform: translateX(4px); background: rgba(255,255,255,.
   .main-nav.open { display: flex; }
   .main-nav a { padding: 12px 14px; }
   .main-nav a::after { display: none; }
-  .hero { min-height: 745px; }
-  .hero-content { width: calc(100% - 32px); padding-top: 72px; }
+  .hero { min-height: 745px; padding-top: 72px; }
+  .hero-content { width: calc(100% - 32px); padding-top: 0; }
   .hero h1 { font-size: clamp(2.75rem, 13vw, 4.05rem); }
   .hero-content > p:not(.eyebrow) { margin-top: 20px; font-size: 16px; }
   .hero-actions { margin-top: 27px; }
