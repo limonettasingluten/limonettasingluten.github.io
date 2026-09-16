@@ -220,13 +220,16 @@ prepareQuery.addEventListener("click", () => {
   queryDialog.showModal();
 });
 
-document.querySelector("[data-open-consulting]").addEventListener("click", () => {
-  dialogSummary.innerHTML = "<span>Consultoría gastronómica</span>";
-  document.querySelector("#dialog-title").textContent = "Contanos sobre tu proyecto";
-  document.querySelector("#dialog-intro").textContent = "Prepararemos una consulta para comenzar a conversar.";
-  queryDialog.dataset.consulting = "true";
-  queryDialog.showModal();
-});
+const consultingButton = document.querySelector("[data-open-consulting]");
+if (consultingButton) {
+  consultingButton.addEventListener("click", () => {
+    dialogSummary.innerHTML = "<span>Consultoría gastronómica</span>";
+    document.querySelector("#dialog-title").textContent = "Contanos sobre tu proyecto";
+    document.querySelector("#dialog-intro").textContent = "Prepararemos una consulta para comenzar a conversar.";
+    queryDialog.dataset.consulting = "true";
+    queryDialog.showModal();
+  });
+}
 
 queryDialog.addEventListener("close", () => {
   document.querySelector("#dialog-title").textContent = "Ya elegiste tus capacitaciones";

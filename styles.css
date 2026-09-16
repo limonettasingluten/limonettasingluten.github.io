@@ -280,7 +280,7 @@ a { color: inherit; }
 .consulting-intro { position: sticky; top: 120px; align-self: start; }
 .consulting h2 { font-size: clamp(2.7rem, 4.8vw, 4.6rem); }
 .consulting-intro > p:not(.eyebrow) { max-width: 480px; margin: 26px 0; color: rgba(255,255,255,.75); }
-.text-link { padding: 8px 0; border: 0; border-bottom: 1px solid var(--lime); color: var(--white); background: transparent; cursor: pointer; font-weight: 800; }
+.text-link { display: inline-block; padding: 8px 0; border: 0; border-bottom: 1px solid var(--lime); color: var(--white); background: transparent; cursor: pointer; text-decoration: none; font-weight: 800; }
 .text-link span { display: inline-block; margin-left: 8px; color: var(--lime); transition: transform .2s ease; }
 .text-link:hover span { transform: translateX(5px); }
 .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
